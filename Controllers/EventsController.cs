@@ -31,7 +31,7 @@ namespace CodingEvents.Controllers
         public IActionResult NewEvent(string name)
         {
             // add the string passed as name to our Events list
-            Events.Add(name);
+            if (!String.IsNullOrEmpty(name)) Events.Add(name);
 
             // redirect to the Events page view to show our updated Events list
             return Redirect("/Events");
