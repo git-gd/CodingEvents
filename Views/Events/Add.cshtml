@@ -1,6 +1,14 @@
 ﻿<h1>Add Event</h1>
-<form method="post">
-    <input name="name" type="text"/>
-    <input name="description" type="text"/>
-    <input type="submit" value="Add Event"/>
-</form>
+<div class="container">
+    <form method="post">
+        <div class="row row-cols-2">
+            <div class="col-2"><label>Event: </label></div><div class="col"><input name="name" type="text" /></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><label>Description: </label></div><div class="col"><input name="description" type="text" /></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><input type="submit" value="Add Event" /></div>
+        </div>
+    </form>
+</div>
