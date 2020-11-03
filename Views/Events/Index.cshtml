@@ -5,12 +5,19 @@
 }
 else
 {
-    <ul>
-        @foreach (var meeting in ViewBag.events as Dictionary<string, string>)
-        {
-            <li>@meeting.Key - @meeting.Value</li>
-        }
-    </ul>
+<table>
+    <tr>
+        <th> Event </th>
+        <th> Description </th>
+    </tr>
+    @foreach (var meeting in ViewBag.events as Dictionary<string, string>)
+    {
+        <tr>
+            <td> @meeting.Key </td>
+            <td> @meeting.Value </td>
+        </tr>
+    }
+</table>
 }
 <p>
     <a asp-controller="Events" asp-action="Add">Add New Event</a>
