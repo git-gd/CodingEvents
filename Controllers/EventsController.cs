@@ -13,10 +13,6 @@ namespace CodingEvents.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            Events.Add("Grocery Shopping");
-            Events.Add("Traffic Jam");
-            Events.Add("Work");
-
             ViewBag.events = Events;
 
             return View();
@@ -27,6 +23,18 @@ namespace CodingEvents.Controllers
         public IActionResult Add()
         {
             return View();
+        }
+
+        // POST: /Events/Add
+        [HttpPost]
+        [Route("/Events/Add")]
+        public IActionResult NewEvent(string name)
+        {
+            // add the string passed as name to our Events list
+            Events.Add(name);
+
+            // redirect to the Events page view to show our updated Events list
+            return Redirect("/Events");
         }
     }
 }
